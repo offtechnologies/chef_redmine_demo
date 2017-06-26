@@ -1,0 +1,32 @@
+---
+driver:
+  name: vagrant
+  driver_config:
+  customize:
+    memory: 2048
+  network:
+    - ["forwarded_port", {guest: 3000, host: 3000}]
+    - ["forwarded_port", {guest: 80, host: 8080}]
+
+provisioner:
+  name: chef_zero
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    data_bags_path: test/fixtures/default/data_bags
+    run_list:
+      - recipe[chef_redmine_demo::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
