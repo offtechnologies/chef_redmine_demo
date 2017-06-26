@@ -9,3 +9,5 @@ include_recipe 'chef_redmine_demo::system_setup'
 include_recipe 'chef_redmine_demo::mysql_setup'
 # install redmine
 include_recipe 'chef_redmine_demo::redmine_setup'
+# install nginx
+include_recipe 'chef_redmine_demo::nginx_setup'
