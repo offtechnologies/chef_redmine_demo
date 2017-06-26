@@ -21,3 +21,7 @@ chef_version '>= 12.1' if respond_to?(:chef_version)
 depends 'mysql', '~> 8.0'
 depends 'mysql2_chef_gem', '~> 2.0'
 depends 'database', '~> 6.1'
+depends 'application', '~> 5.2.0'
+depends 'application_ruby', '~> 4.1'
+depends 'application_git', '~> 1.2'
+depends 'poise-ruby-build', '~> 1.1.0'

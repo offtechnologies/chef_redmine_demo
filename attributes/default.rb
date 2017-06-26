@@ -12,3 +12,10 @@ default['mysql_setup']['dbhost']         = '127.0.0.1'
 default['mysql_setup']['dbname']         = node['system_setup']['service_name']
 default['mysql_setup']['dbadmin']        = node['user_setup']['user']
 default['mysql_setup']['dbadapter']      = 'mysql2'
+
+# ruby_setup - ruby_version > 2.2 gives 'warning: constant ::Fixnum is deprecated' error
+default['ruby_setup']['ruby_version']    = '2.2'
+
+# tracks_setup
+default['redmine_setup']['redmine_repo']         = 'https://github.com/redmine/redmine.git'
+default['redmine_setup']['redmine_version']      = '3.3.3'

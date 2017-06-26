@@ -7,3 +7,5 @@
 include_recipe 'chef_redmine_demo::system_setup'
 # install and setup mysql
 include_recipe 'chef_redmine_demo::mysql_setup'
+# install redmine
+include_recipe 'chef_redmine_demo::redmine_setup'
