@@ -21,7 +21,7 @@ end
 
 # Configure the MySQL service.
 mysql_service node['system_setup']['service_name'] do
-  version '5.5'
+  version node['mysql_setup']['dbversion']
   initial_root_password db_secret['root_password']
   action [:create, :start]
 end
